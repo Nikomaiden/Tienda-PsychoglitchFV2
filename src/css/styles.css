@@ -114,9 +114,6 @@ form input{
   color: #fff;
   padding-left: 0.5rem;
 }
-.login{
-
-}
 /* SECCIÓN PRINCIPAL (HERO) */
 main > section:first-child {
   position: relative;
@@ -273,7 +270,6 @@ footer {
   font-size: 0.95rem;
   color: #dcdde1;
   line-height: 1.5;
-  tex
 }
 .section-enlaces ul{
     list-style: none;
