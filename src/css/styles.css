@@ -243,6 +243,11 @@ footer {
   color: #fff;
   font-family: 'Poppins', sans-serif;
   padding: 3rem 2rem 1.5rem;
+  svg{
+    width: 2rem;
+    height: 2rem;
+    color: #5211d4;
+  }
 }
 .footer-container{
   display:grid;
@@ -262,7 +267,7 @@ footer {
   letter-spacing: 1px;
 }
 .text h3{
-  color: #a29bfe;
+  color: #5211d4;
   font-size:1.2rem;
   margin-bottom: 0.6rem;
 }
@@ -285,10 +290,10 @@ footer {
     transition: color 0.3s ease;
 }
 .section-enlaces ul li a:hover {
-  color: #a29bfe;
+  color: #5211d4;
 }
 .section-redes h3 {
-  color: #a29bfe;
+  color: #5211d4;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
