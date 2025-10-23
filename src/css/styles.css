@@ -200,6 +200,11 @@ main > section:nth-child(5){
   padding: 3rem 2rem;
   text-align: center;
 }
+main > section:nth-child(6){
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #161021
+}
 main h2{
   font-size: 1.8rem;
   margin-bottom: 1rem;
