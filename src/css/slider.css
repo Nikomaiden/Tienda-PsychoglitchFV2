@@ -1,21 +1,23 @@
-slider-marcas {
-  width: 90%;
+.slider-marcas {
+  width: 100%;
   margin: auto;
   overflow: hidden;
   padding: 20px 0;
 }
 
 .slider-marcas h2 {
+  font-size: 1.8rem;
   text-align: center;
-  margin-bottom: 20px;
+  color: #fff;
 }
 
 /* Contenedor de movimiento horizontal de marcas */
-.slide-track {
+.slider-track {
   display: flex;
-  gap: 20px;
-  animation: scroll 40s linear infinite;
-  width: max-content;
+  align-items: center;
+  gap: 30px;
+  width: max-content; /* Se ajusta automáticamente al número real de elementos */
+  animation: scroll 40s linear infinite; /* Más suave */
 }
 
 /* Estilo individual de cada marca */
@@ -33,13 +35,15 @@ slider-marcas {
 }
 
 .slide:hover {
-  transform: scale(1.05);
+  transform: scale(1.06);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 2;
+  filter: brightness(1.2);
+  transition: transform 0.3s ease, box-shadow 0.4s ease, filter 0.4s ease;
 }
 
 /* Pausa animación de marcas al hacer hover */
-.slider-marcas:hover .slide-track {
+.slider-marcas:hover .slider-track {
   animation-play-state: paused;
 }
 
@@ -56,6 +60,38 @@ slider-marcas {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-30%);
+    transform: translateX(-50%); /* Mueve la mitad del ancho para crear loop perfecto */
   }
 }
+/* 🌐 Responsividad */
+@media (max-width: 1024px) {
+  .slide {
+    width: 150px;
+    height: 90px;
+  }
+  .slider-marcas h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide {
+    width: 120px;
+    height: 80px;
+  }
+  .slider-marcas {
+    padding: 15px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide {
+    width: 100px;
+    height: 70px;
+  }
+  .slider-marcas h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* FIN SLIDER MARCAS */
