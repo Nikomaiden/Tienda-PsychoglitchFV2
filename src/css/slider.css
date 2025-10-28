@@ -95,3 +95,13 @@
 }
 
 /* FIN SLIDER MARCAS */
+
+
+
+/* BOTONES REDES SOCIALES*/
+.boton-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
