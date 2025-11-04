@@ -336,44 +336,27 @@ footer {
 }
 /* BOTONES REDES SOCIALES*/
 .boton-whatsapp {
-  
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 1000;
-}
-
-.boton-flotante {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #25d366;
-  border-radius: 50%;
   width: 55px;
   height: 55px;
-  box-shadow: 0 0 6px #00ff66, 0 0 12px rgba(0, 255, 102, 0.5);
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  line-height: 55px;
+  bottom: 30px;
+  right: 30px;
+  background: #0df053;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
 }
-
-.boton-flotante:hover {
+.boton-whatsapp:hover {
+  background: #0ac846;
+  color: #fff;
+  text-decoration: none;
   transform: scale(1.1);
-  box-shadow: 0 0 10px #00ff66, 0 0 20px rgba(0, 255, 102, 0.7);
 }
-
-.boton-flotante img {
-  width: 32px;
-  height: 32px;
-}
-
-/* --- Responsive (mantiene tamaño proporcional en móviles) --- */
-@media (max-width: 768px) {
-  .boton-flotante {
-    width: 50px;
-    height: 50px;
-  }
-
-  .boton-flotante img {
-    width: 28px;
-    height: 28px;
-  }
+.boton-whatsapp img{
+  width: 55px;
+  height: 55px;
 }
