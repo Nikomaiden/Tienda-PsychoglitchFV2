@@ -66,7 +66,16 @@
 
     <script type="text/babel">
       // Nuestro primer componente
-      function Saludar({nombre,edad,ciudad}) {
+      function Saludar({nombre,edad,ciudad,color}) {
+        const estilos = {
+            color: color, // aplica el color del prop
+            border: "1px solid #ccc",
+            borderRadius: "10px",
+            padding: "10px",
+            margin: "10px",
+            backgroundColor: "#111",
+            fontFamily: "sans-serif"
+        };
         return (
             <div> 
                 <h1>¡Hola desde un componente!</h1>
@@ -79,9 +88,9 @@
       function App(){
         return (
             <div>
-                <Saludar nombre="Juan" edad={25} ciudad="Madrid" />
-                <Saludar nombre="Ana" edad={30} ciudad="Barcelona" />
-                <Saludar nombre="Pedro" edad={28} ciudad="Valencia" />
+                <Saludar nombre="Juan" edad={25} ciudad="Madrid" color="white" />
+                <Saludar nombre="Ana" edad={30} ciudad="Barcelona" color="red"/>
+                <Saludar nombre="Pedro" edad={28} ciudad="Valencia" color="blue" />
             </div>
         );
       }
