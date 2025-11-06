@@ -19,7 +19,9 @@
             "Bienvenido a Psychoglitch - Tu tienda virtual gamer"
         )
 
-
+        const rootEL = document.querySelector("root")
+        const root = ReactDOM.createRoot (rootEL)
+        root.render(titulo)
 
     </script>
 </head>
@@ -51,7 +53,46 @@
         </div>
     </header>
     <main>
-        <h1>React html</h1>
+       <div id="root"></div>
+
+        <script type="module">
+            import React from 'https://esm.sh/react?dev'
+            import ReactDOM from 'https://esm.sh/react-dom/client?dev'
+            window.React = React
+            window.ReactDOMClient = ReactDOM
+        </script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      // Nuestro primer componente
+      function Saludar({nombre,edad,ciudad}) {
+        return (
+            <div> 
+                <h1>¡Hola desde un componente!</h1>
+                <h2>Mi nombre es {nombre}</h2>
+                <h3>Tienes edad {edad}</h3>
+                <h4>Vives en {ciudad}</h4>
+            </div> 
+        )
+      }
+      function App(){
+        return (
+            <div>
+                <Saludar nombre="Juan" edad={25} ciudad="Madrid" />
+                <Saludar nombre="Ana" edad={30} ciudad="Barcelona" />
+                <Saludar nombre="Pedro" edad={28} ciudad="Valencia" />
+            </div>
+        );
+      }
+
+      // Renderizar el componente
+      window.onload = () => {
+        const rootEl = document.querySelector('#root')
+        const root = ReactDOMClient.createRoot(rootEl)
+        root.render(<App />)
+      }
+    </script>
     </main>
     <footer>
         <div class="footer-container">
