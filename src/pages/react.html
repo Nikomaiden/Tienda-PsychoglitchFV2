@@ -53,56 +53,50 @@
         </div>
     </header>
     <main>
-       <div id="root"></div>
+        <div id="root"></div>
+            <link rel="stylesheet" href="/src/css/styles copy.css">
 
-        <script type="module">
-            import React from 'https://esm.sh/react?dev'
-            import ReactDOM from 'https://esm.sh/react-dom/client?dev'
-            window.React = React
-            window.ReactDOMClient = ReactDOM
-        </script>
+            <script type="module">
+                import React from 'https://esm.sh/react?dev'
+                import ReactDOM from 'https://esm.sh/react-dom/client?dev'
+                window.React = React
+                window.ReactDOMClient = ReactDOM
+            </script>
 
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+            <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <script type="text/babel">
-      // Nuestro primer componente
-      function Saludar({nombre,edad,ciudad,color}) {
-        const estilos = {
-            color: color, // aplica el color del prop
-            border: "1px solid #ccc",
-            borderRadius: "10px",
-            padding: "10px",
-            margin: "10px",
-            backgroundColor: "#111",
-            fontFamily: "sans-serif"
-        };
-        return (
-            <div> 
-                <h1>¡Hola desde un componente!</h1>
-                <h2>Mi nombre es {nombre}</h2>
-                <h3>Tienes edad {edad}</h3>
-                <h4>Vives en {ciudad}</h4>
-            </div> 
-        )
-      }
-      function App(){
-        return (
-            <div>
-                <Saludar nombre="Juan" edad={25} ciudad="Madrid" color="white" />
-                <Saludar nombre="Ana" edad={30} ciudad="Barcelona" color="red"/>
-                <Saludar nombre="Pedro" edad={28} ciudad="Valencia" color="blue" />
-            </div>
-        );
-      }
+                <script type="text/babel">
+                    // 🎮 HeroSection con tu mismo CSS
+                    function HeroSection({ titulo, descripcion, img }) {
+                    return (
+                <main>
+                    <section className="hero-section">
+                        <img src={img} alt="Imagen de fondo" />
+                        <h1>{titulo}</h1>
+                        <p>{descripcion}</p>
+                        <button className="Explorar-todo">Explorar Todo</button>
+                        <button className="Ver-ofertas">Ver ofertas</button>
+                    </section>
+                </main>
+                    );
+                    }
 
-      // Renderizar el componente
-      window.onload = () => {
-        const rootEl = document.querySelector('#root')
-        const root = ReactDOMClient.createRoot(rootEl)
-        root.render(<App />)
-      }
-    </script>
-    </main>
+                // 🧩 Componente principal
+                function App() {
+                return (
+                <div>
+                    <HeroSection
+                    titulo="Bienvenido a PSYCHOGLITCH"
+                    descripcion="Tu universo de videojuegos, consolas de última generación y la mejor tecnología. Explora un mundo de entretenimiento digital."
+                    img="/src/assets/img/2149829169.jpg"
+                    />
+                </div>
+                    );
+                    }
+                // 🚀 Renderizado
+                const root = ReactDOMClient.createRoot(document.getElementById("root"));
+                root.render(<App />);
+            </script>
     <footer>
         <div class="footer-container">
         <!-- Sección de marca -->
