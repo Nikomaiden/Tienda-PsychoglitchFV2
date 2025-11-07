@@ -5,25 +5,9 @@
     <meta charset="UTF-8">
     <meta name="description" content="Encuentra los mejores videojuegos en mi tienda virtual">
     <link rel="stylesheet" href="/src/css/styles.css">
-    <link rel="stylesheet" href="/src/js/scripts.js">
-    <link rel="stylesheet" href="/src/css/slider.css">
+    <sc rel="stylesheet" href="/src/js/scripts.js">
+    <link rel="stylesheet" href="/src/css/styles copy.css">
     <script type="module" src="/src/js/main.js"></script>
-    <script>
-        import React from "https://esm.sh/react?dev";
-        import ReactDOM from "https://esm.sh/react-dom/client?dev";
-
-
-        const titulo = React.createElement(
-            "h1",
-            { style: { color: "blue", textAlign: "center" } },
-            "Bienvenido a Psychoglitch - Tu tienda virtual gamer"
-        )
-
-        const rootEL = document.querySelector("root")
-        const root = ReactDOM.createRoot (rootEL)
-        root.render(titulo)
-
-    </script>
 </head>
 <body> 
     <header>
@@ -53,9 +37,7 @@
         </div>
     </header>
     <main>
-        <div id="root"></div>
-            <link rel="stylesheet" href="/src/css/styles copy.css">
-
+            <div id="root"></div>
             <script type="module">
                 import React from 'https://esm.sh/react?dev'
                 import ReactDOM from 'https://esm.sh/react-dom/client?dev'
@@ -69,7 +51,7 @@
                     // 🎮 HeroSection con tu mismo CSS
                     function HeroSection({ titulo, descripcion, img }) {
                     return (
-                <main>
+                <section>
                     <section className="hero-section">
                         <img src={img} alt="Imagen de fondo" />
                         <h1>{titulo}</h1>
@@ -77,7 +59,7 @@
                         <button className="Explorar-todo">Explorar Todo</button>
                         <button className="Ver-ofertas">Ver ofertas</button>
                     </section>
-                </main>
+                </section>
                     );
                     }
 
