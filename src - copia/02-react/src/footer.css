@@ -1,0 +1,118 @@
+/* FOOTER PRINCIPAL */
+footer {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 3rem 2rem 1.5rem;
+  svg{
+    width: 2rem;
+    height: 2rem;
+    color: #5211d4;
+  }
+}
+.footer-container{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 2rem;
+  margin: 0 auto;
+  align-items: start;
+}
+.section-footer .brand{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+.section-footer strong{
+  font-size: 1.5rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.text h3{
+  color: #5211d4;
+  font-size:1.2rem;
+  margin-bottom: 0.6rem;
+}
+.text p{
+  font-size: 0.95rem;
+  color: #dcdde1;
+  line-height: 1.5;
+}
+.section-enlaces ul{
+    list-style: none;
+    padding: 0;
+    margin-bottom:1rem;
+}
+.section-enlaces ul li{
+    margin-bottom: 0.5rem;
+}
+.section-enlaces ul li a{
+    color: #dcdde1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.section-enlaces ul li a:hover {
+  color: #5211d4;
+}
+.section-redes h3 {
+  color: #5211d4;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.section-button{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.social-btn{
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: transform 0.3s ease opacity 0.3s ease;
+  background-color: #a29bfe;
+}
+.social-btn.fb{
+  background-color: #3b5998;
+}
+.social-btn.ins{
+  background-color: #1da1f2;
+}
+.social-btn:hover{
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+.section-final{
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+/* BOTONES REDES SOCIALES*/
+.boton-whatsapp {
+  position: fixed;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  bottom: 30px;
+  right: 30px;
+  background: #0df053;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+.boton-whatsapp:hover {
+  background: #0ac846;
+  color: #fff;
+  text-decoration: none;
+  transform: scale(1.1);
+}
+.boton-whatsapp img{
+  width: 55px;
+  height: 55px;
+}
