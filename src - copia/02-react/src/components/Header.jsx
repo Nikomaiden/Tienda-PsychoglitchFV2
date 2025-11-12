@@ -1,5 +1,7 @@
 import React from "react";
-import "./header.css";
+import "../css/header.css";
+import { Router } from "react-router-dom";
+import{link}  from 'react-router-dom';
 
 function Header() {
     return (
@@ -18,16 +20,15 @@ function Header() {
         </svg>
         <strong>PSYCHOGLITCH</strong>
       </h2>
-      <nav>
-        <a href="/src/pages/index.html"><strong>Inicio</strong></a>
-        <a href="#"><strong>Juegos</strong></a>
-        <a href="#"><strong>Consolas</strong></a>
-        <a href="#"><strong>Tecnología</strong></a>
-        <a href="#"><strong>Ofertas</strong></a>
+        <nav>
+          <a href="#"><strong>Inicio</strong></a>
+          <a href="#"><strong>Juegos</strong></a>
+          <a href="#"><strong>Consolas</strong></a>
+          <a href="#"><strong>Tecnología</strong></a>
+          <a href="#"><strong>Ofertas</strong></a>
       </nav>
-
       <div>
-        <a href="/src/pages/login.html" className="login">Iniciar sesión</a>
+        <a href="/login.jsx" className="loginxd">Iniciar sesión</a>
 
         <form role="search">
           <svg

@@ -1,15 +1,13 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './index.css'
-import './sliders.css'
-import Header from './Header'
-import Footer from './Footer'
+import './css/index.css'
+import './css/sliders.css'
+import Header from './components/Header.jsx'
+import Footer from './components/Footer.jsx'
+import { BrowserRouter as Router,Routes, Route } from 'react-router-dom'
 
-function App() {
-  return (
-    <><Header />
-<main>
+function Main(){
+  return(
+    <main>
     <section className="hero-section">
       <img src="/2149829169.jpg" alt="Banner principal" width="200px" />
       <h1>Bienvenido a PSYCHOGLITCH</h1>
@@ -122,6 +120,18 @@ function App() {
       <div className="slide">
         <img src="/Marca (4).png" alt="marca 8" width="200px" />
       </div>
+      <div className="slide">
+        <img src="/Marca (1).png" alt="marca 5" width="200px" />
+      </div>
+      <div className="slide">
+        <img src="/Marca (2).png" alt="marca 6" width="200px" />
+      </div>
+      <div className="slide">
+        <img src="/Marca (3).png" alt="marca 7" width="200px" />
+      </div>
+      <div className="slide">
+        <img src="/Marca (4).png" alt="marca 8" width="200px" />
+      </div>
     </div>
   </section>
   <section className="boton-whatsapp">
@@ -135,8 +145,16 @@ function App() {
     </a>
   </section>
 </main>
-<Footer />
-</>
+  )
+}
+
+function App() {
+  return (
+    <>
+      <Header />
+      <Main />
+      <Footer />
+    </>
   )
 }
 export default App
