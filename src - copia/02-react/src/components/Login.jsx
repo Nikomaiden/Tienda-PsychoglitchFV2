@@ -5,7 +5,9 @@ import Footer from "./Footer";
 
 function Login() {
     return (
-        <Header />
+        <Header />,
+        
+        <Footer />
 );
 }
 export default Login;

@@ -19,7 +19,7 @@ function Main(){
         <button className="Ver-ofertas">Ver ofertas</button>
     </section>
   <section>
-    <h2>Lo mas destacado</h2>
+    <h2>Proximos lanzamientos</h2>
     <p>No te pierdas lo mejor de nuestra tienda...</p>
     <button className="Explorar-todo"> Ver más </button>
   </section>
