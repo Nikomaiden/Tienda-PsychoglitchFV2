@@ -3,12 +3,11 @@ import "../css/header.css";
 import { Router } from "react-router-dom";
 
 
-function Catalogo() {
+export function Catalogo() {
     return (
     <>
-    <Header />,
-        
-    <Footer />
+      <h1>Catálogo de Productos</h1>
+      <p>Aquí puedes explorar todos los productos disponibles en nuestra tienda.</p>
     </>
   )
 }

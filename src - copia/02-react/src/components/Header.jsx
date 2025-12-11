@@ -5,32 +5,34 @@ import { Router } from "react-router-dom";
 function Header() {
     return (
     <header>
+          <nav>
+              <span>Categorias</span>
+                  <a href="#"><strong>Inicio</strong></a>
+                  <a href="#"><strong>Juegos</strong></a>
+                  <a href="/Catalogo.jsx"><strong>Catalogo</strong></a>
+                  <a href="#"><strong>Consolas</strong></a>
+                  <a href="#"><strong>Tecnología</strong></a>
+                  <a href="#"><strong>Ofertas</strong></a>
+          </nav>
       <h2>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          className="icon icon-tabler icons-tabler-filled icon-tabler-device-gamepad-3"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M12.707 14.293l3 3a1 1 0 0 1 .293 .707v2a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-2a1 1 0 0 1 .293 -.707l3 -3a1 1 0 0 1 1.414 0m-6.707 -6.293a1 1 0 0 1 .707 .293l3 3a1 1 0 0 1 0 1.414l-3 3a1 1 0 0 1 -.707 .293h-2a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2zm14 0a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-2a1 1 0 0 1 -.707 -.293l-3 -3a1 1 0 0 1 0 -1.414l3 -3a1 1 0 0 1 .707 -.293zm-6 -6a2 2 0 0 1 2 2v2a1 1 0 0 1 -.293 .707l-3 3a1 1 0 0 1 -1.414 0l-3 -3a1 1 0 0 1 -.293 -.707v-2a2 2 0 0 1 2 -2z" />
-        </svg>
-        <strong>PSYCHOGLITCH</strong>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="icon icon-tabler icons-tabler-filled icon-tabler-device-gamepad-3"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M12.707 14.293l3 3a1 1 0 0 1 .293 .707v2a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-2a1 1 0 0 1 .293 -.707l3 -3a1 1 0 0 1 1.414 0m-6.707 -6.293a1 1 0 0 1 .707 .293l3 3a1 1 0 0 1 0 1.414l-3 3a1 1 0 0 1 -.707 .293h-2a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2zm14 0a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-2a1 1 0 0 1 -.707 -.293l-3 -3a1 1 0 0 1 0 -1.414l3 -3a1 1 0 0 1 .707 -.293zm-6 -6a2 2 0 0 1 2 2v2a1 1 0 0 1 -.293 .707l-3 3a1 1 0 0 1 -1.414 0l-3 -3a1 1 0 0 1 -.293 -.707v-2a2 2 0 0 1 2 -2z" />
+          </svg>
+          <a href="/" style ={{ textDecoration: 'none', color: 'inherit' }}>
+          <strong>PSYCHOGLITCH</strong>
+          </a>
       </h2>
-        <nav>
-          <a href="#"><strong>Inicio</strong></a>
-          <a href="#"><strong>Juegos</strong></a>
-          <a href="#"><strong>Catalogo</strong></a>
-          <a href="#"><strong>Consolas</strong></a>
-          <a href="#"><strong>Tecnología</strong></a>
-          <a href="#"><strong>Ofertas</strong></a>
-      </nav>
       <div>
         <a href="/login.jsx" className="loginxd">Iniciar sesión</a>
-
-        <form role="search">
+        <form className="formSearch" role="search">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -51,6 +53,7 @@ function Header() {
           <input type="search" id="search-input" placeholder="Buscar productos..." />
         </form>
       </div>
+      
 
       <div className="shopping-bag">
         <a href="#" className="icon-link">
