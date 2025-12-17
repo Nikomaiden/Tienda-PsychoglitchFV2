@@ -1,0 +1,531 @@
+/* ===============================================
+   404 PAGE - PSYCHOGLITCH
+   =============================================== */
+
+.not-found-page {
+  min-height: 100vh;
+  background: #0a0612;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+/* ===============================================
+   FONDO ANIMADO CON GLITCH
+   =============================================== */
+.glitch-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.glitch-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.3;
+  animation: glitchFloat 15s infinite alternate ease-in-out;
+}
+
+.shape-1 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #5211d4, #7c3aed);
+  top: -10%;
+  left: -5%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  bottom: -10%;
+  right: -5%;
+  animation-delay: 3s;
+}
+
+.shape-3 {
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  top: 40%;
+  right: 30%;
+  animation-delay: 6s;
+}
+
+@keyframes glitchFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 40px) scale(0.9);
+  }
+  75% {
+    transform: translate(40px, 20px) scale(1.05);
+  }
+}
+
+/* ===============================================
+   CONTENIDO PRINCIPAL
+   =============================================== */
+.not-found-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================================
+   CÓDIGO DE ERROR 404 CON GLITCH
+   =============================================== */
+.error-code {
+  font-size: clamp(6rem, 15vw, 12rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #fff, #8b5cf6, #5211d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 1rem;
+  position: relative;
+  animation: glitch 2s infinite;
+}
+
+.error-code::before,
+.error-code::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #fff, #8b5cf6, #5211d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.error-code::before {
+  animation: glitchTop 1s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+.error-code::after {
+  animation: glitchBottom 1.5s infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+}
+
+@keyframes glitchTop {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(2px, -2px);
+  }
+  40% {
+    transform: translate(-2px, 2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(-2px, -2px);
+  }
+}
+
+@keyframes glitchBottom {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 0);
+  }
+  40% {
+    transform: translate(2px, 0);
+  }
+  60% {
+    transform: translate(-2px, 0);
+  }
+  80% {
+    transform: translate(2px, 0);
+  }
+}
+
+/* ===============================================
+   TÍTULO CON GLITCH
+   =============================================== */
+.error-title {
+  margin-bottom: 1.5rem;
+}
+
+.glitch-text {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 2px;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.glitch-text::before {
+  color: #00ffff;
+  animation: glitchTextTop 0.5s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+
+.glitch-text::after {
+  color: #ff00ff;
+  animation: glitchTextBottom 0.7s infinite;
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchTextTop {
+  0%, 100% {
+    transform: translate(0);
+  }
+  33% {
+    transform: translate(-2px, -1px);
+  }
+  66% {
+    transform: translate(2px, 1px);
+  }
+}
+
+@keyframes glitchTextBottom {
+  0%, 100% {
+    transform: translate(0);
+  }
+  33% {
+    transform: translate(2px, 1px);
+  }
+  66% {
+    transform: translate(-2px, -1px);
+  }
+}
+
+/* ===============================================
+   DESCRIPCIÓN
+   =============================================== */
+.error-description {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  color: #9ca3af;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===============================================
+   ILUSTRACIÓN
+   =============================================== */
+.error-illustration {
+  margin: 3rem 0;
+  animation: bounce 2s infinite;
+}
+
+.error-illustration svg {
+  width: 150px;
+  height: 150px;
+  color: #5211d4;
+  filter: drop-shadow(0 0 20px rgba(82, 17, 212, 0.5));
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* ===============================================
+   BOTONES DE ACCIÓN
+   =============================================== */
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.btn-primary-404,
+.btn-secondary-404 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.btn-primary-404 {
+  background: linear-gradient(135deg, #5211d4, #7c3aed);
+  color: #fff;
+}
+
+.btn-primary-404:hover {
+  background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(82, 17, 212, 0.4);
+}
+
+.btn-secondary-404 {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary-404:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #5211d4;
+  transform: translateY(-2px);
+}
+
+/* ===============================================
+   ENLACES ÚTILES
+   =============================================== */
+.helpful-links {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.helpful-links > p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.quick-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.quick-links a {
+  color: #8b5cf6;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.quick-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #5211d4, #8b5cf6);
+  transition: width 0.3s ease;
+}
+
+.quick-links a:hover {
+  color: #a78bfa;
+}
+
+.quick-links a:hover::after {
+  width: 100%;
+}
+
+/* ===============================================
+   PARTÍCULAS DECORATIVAS
+   =============================================== */
+.particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #5211d4;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #5211d4;
+  animation: particleFloat 10s infinite ease-in-out;
+}
+
+.particle:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  animation-delay: 0s;
+  animation-duration: 8s;
+}
+
+.particle:nth-child(2) {
+  top: 60%;
+  left: 80%;
+  animation-delay: 2s;
+  animation-duration: 10s;
+}
+
+.particle:nth-child(3) {
+  top: 80%;
+  left: 30%;
+  animation-delay: 4s;
+  animation-duration: 12s;
+}
+
+.particle:nth-child(4) {
+  top: 40%;
+  left: 70%;
+  animation-delay: 1s;
+  animation-duration: 9s;
+}
+
+.particle:nth-child(5) {
+  top: 10%;
+  left: 60%;
+  animation-delay: 3s;
+  animation-duration: 11s;
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(50px, 100px) scale(1.5);
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 1;
+  }
+}
+
+/* ===============================================
+   RESPONSIVE
+   =============================================== */
+@media (max-width: 768px) {
+  .not-found-page {
+    padding: 1.5rem;
+  }
+
+  .error-code {
+    font-size: 8rem;
+  }
+
+  .error-illustration svg {
+    width: 120px;
+    height: 120px;
+  }
+
+  .error-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary-404,
+  .btn-secondary-404 {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .quick-links {
+    gap: 1rem;
+  }
+
+  .shape-1,
+  .shape-2,
+  .shape-3 {
+    filter: blur(80px);
+  }
+}
+
+@media (max-width: 480px) {
+  .error-code {
+    font-size: 6rem;
+  }
+
+  .glitch-text {
+    font-size: 1.5rem;
+  }
+
+  .error-description {
+    font-size: 0.95rem;
+  }
+
+  .error-illustration {
+    margin: 2rem 0;
+  }
+
+  .error-illustration svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  .btn-primary-404,
+  .btn-secondary-404 {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}

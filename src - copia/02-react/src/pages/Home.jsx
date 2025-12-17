@@ -216,11 +216,11 @@ export function HomePage() {
             <div className="brands-slider">
               <div className="brands-track">
                 {/* Primera vuelta */}
-                <div className="brand-card">
-                  <div className="brand-card-inner">
-                    <img src="/Marca (1).png" alt="PlayStation" />
+                  <div className="brand-card">
+                    <div className="brand-card-inner">
+                        <img src="/Marca (1).png" alt="PlayStation" />
+                    </div>
                   </div>
-                </div>
                 <div className="brand-card">
                   <div className="brand-card-inner">
                     <img src="/Marca (2).png" alt="Xbox" />
