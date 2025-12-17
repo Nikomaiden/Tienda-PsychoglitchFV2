@@ -45,7 +45,6 @@ function Section({ title, subtitle, children, className, showButton, buttonText,
 }
 
 export function HomePage() {
-  // Datos de productos (después puedes traerlos de una API)
   const proximosLanzamientos = [
     {
       image: '/switch.webp',
@@ -136,11 +135,11 @@ export function HomePage() {
           {/* Stats */}
           <div className="hero-stats">
             <div className="stat">
-              <span className="stat-number">500+</span>
+              <span className="stat-number">0+</span>
               <span className="stat-label">Productos</span>
             </div>
             <div className="stat">
-              <span className="stat-number">50+</span>
+              <span className="stat-number">0+</span>
               <span className="stat-label">Marcas</span>
             </div>
             <div className="stat">
@@ -171,7 +170,7 @@ export function HomePage() {
         <div className="promo-content">
           <div className="promo-text">
             <span className="promo-badge">Oferta Especial</span>
-            <h2>Hasta 40% OFF en Consolas</h2>
+            <h2>Hasta 10% OFF en Consolas</h2>
             <p>Aprovecha nuestros descuentos en PlayStation 5, Xbox Series X y Nintendo Switch</p>
             <Link to="/ofertas" className="promo-btn">
               Comprar ahora
@@ -238,7 +237,7 @@ export function HomePage() {
                   </div>
                 </div>
                 
-                {/* Segunda vuelta (duplicado para efecto infinito) */}
+                {/* Segunda vuelta */}
                 <div className="brand-card">
                   <div className="brand-card-inner">
                     <img src="/Marca (1).png" alt="PlayStation" />

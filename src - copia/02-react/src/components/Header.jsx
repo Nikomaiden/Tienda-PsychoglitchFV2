@@ -92,7 +92,7 @@ function Header() {
           {/* Navegación */}
           <nav className={`nav ${isMenuOpen ? 'active' : ''}`}>
             <div className="nav-header">
-              <span className="nav-title">Menú</span>
+              <span className="nav-title"></span>
               <button 
                 className="close-btn" 
                 onClick={closeMenu}
