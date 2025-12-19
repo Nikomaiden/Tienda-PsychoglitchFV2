@@ -5,6 +5,8 @@ import { HomePage } from './pages/Home.jsx'
 import Login from './components/Login.jsx'
 import { NotFoundPage } from './pages/404.jsx'
 import Catalogo from './pages/Catalogo.jsx'
+import Consolas from './pages/Consolas.jsx'
+import Whatsapp from './components/Whatsapp.jsx'
 
 function App() {
   return (
@@ -15,17 +17,19 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/catalogo" element={<Catalogo />} />
-        {/* Agrega más rutas aquí */}
+        
         <Route path="/juegos" element={<div>Página de Juegos</div>} />
-        <Route path="/consolas" element={<div>Página de Consolas</div>} />
+        <Route path="/consolas" element={<Consolas />} />
         <Route path="/tecnologia" element={<div>Página de Tecnología</div>} />
         <Route path="/ofertas" element={<div>Página de Ofertas</div>} />
         <Route path="/carrito" element={<div>Carrito</div>} />
         <Route path="/favoritos" element={<div>Favoritos</div>} />
-        {/* Ruta 404 - debe ir al final */}
+        
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
 
+      <Whatsapp />
+      
       <Footer />
     </>
   )

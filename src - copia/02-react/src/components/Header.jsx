@@ -73,7 +73,7 @@ function Header() {
             <div className="menu-overlay" onClick={closeMenu}></div>
           )}
 
-          {/* Logo - ✅ Usar Link en lugar de <a> */}
+          {/* Logo */}
           <Link to="/" className="logo" onClick={closeMenu}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -105,20 +105,12 @@ function Header() {
             <div className="nav-content">
               <span className="nav-label">Categorías</span>
               
-              {/* ✅ Todos con Link, sin .jsx */}
               <Link to="/" className="nav-link" onClick={closeMenu}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                   <polyline points="9 22 9 12 15 12 15 22" />
                 </svg>
                 Inicio
-              </Link>
-
-              <Link to="/juegos" className="nav-link" onClick={closeMenu}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12.707 14.293l3 3a1 1 0 0 1 .293 .707v2a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-2a1 1 0 0 1 .293 -.707l3 -3a1 1 0 0 1 1.414 0" />
-                </svg>
-                Juegos
               </Link>
 
               <Link to="/catalogo" className="nav-link" onClick={closeMenu}>
@@ -128,6 +120,13 @@ function Header() {
                   <line x1="12" y1="17" x2="12" y2="21" />
                 </svg>
                 Catálogo
+              </Link>
+
+              <Link to="/juegos" className="nav-link" onClick={closeMenu}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.707 14.293l3 3a1 1 0 0 1 .293 .707v2a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-2a1 1 0 0 1 .293 -.707l3 -3a1 1 0 0 1 1.414 0" />
+                </svg>
+                Juegos
               </Link>
 
               <Link to="/consolas" className="nav-link" onClick={closeMenu}>

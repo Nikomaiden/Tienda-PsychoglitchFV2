@@ -1,0 +1,848 @@
+/* ===============================================
+   CONSOLAS PAGE - PSYCHOGLITCH
+   =============================================== */
+
+.consolas-page {
+  background: #0a0612;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* ===============================================
+   HERO SECTION
+   =============================================== */
+.consolas-hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 4rem 2rem;
+}
+
+/* Fondo animado */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.3;
+  animation: heroFloat 20s infinite ease-in-out;
+}
+
+.shape-1 {
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(135deg, #5211d4, #7c3aed);
+  top: -10%;
+  right: -5%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  bottom: -10%;
+  left: -5%;
+  animation-delay: 7s;
+}
+
+.shape-3 {
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(135deg, #6d28d9, #5211d4);
+  top: 50%;
+  left: 50%;
+  animation-delay: 14s;
+}
+
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -40px) scale(1.1);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.95);
+  }
+}
+
+/* Contenido del hero */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: rgba(82, 17, 212, 0.2);
+  border: 1px solid #5211d4;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  animation: pulse 2s infinite;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(82, 17, 212, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(82, 17, 212, 0);
+  }
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #fff, #8b5cf6, #5211d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: #9ca3af;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Stats del hero */
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Botones del hero */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-hero-primary,
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 2.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.btn-hero-primary {
+  background: linear-gradient(135deg, #5211d4, #7c3aed);
+  color: #fff;
+  border: none;
+}
+
+.btn-hero-primary:hover {
+  background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(82, 17, 212, 0.5);
+}
+
+.btn-hero-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.btn-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #5211d4;
+  transform: translateY(-3px);
+}
+
+/* ===============================================
+   SECCIONES GENERALES
+   =============================================== */
+.consolas-marcas,
+.consolas-destacadas {
+  max-width: 1400px;
+  margin: 5rem auto;
+  padding: 0 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  color: #9ca3af;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===============================================
+   MARCAS - CARDS
+   =============================================== */
+.marcas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.marca-card {
+  background: linear-gradient(135deg, rgba(26, 15, 46, 0.8), rgba(22, 16, 33, 0.9));
+  border: 1px solid rgba(82, 17, 212, 0.3);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+}
+
+.marca-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(82, 17, 212, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+
+.marca-card:hover::before {
+  animation: shimmerEffect 2s infinite;
+}
+
+@keyframes shimmerEffect {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+.marca-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(82, 17, 212, 0.4);
+}
+
+/* Colores específicos por marca */
+.marca-card.playstation {
+  border-color: rgba(0, 112, 209, 0.5);
+}
+
+.marca-card.playstation:hover {
+  border-color: #0070d1;
+  box-shadow: 0 25px 50px rgba(0, 112, 209, 0.4);
+}
+
+.marca-card.xbox {
+  border-color: rgba(16, 124, 16, 0.5);
+}
+
+.marca-card.xbox:hover {
+  border-color: #107c10;
+  box-shadow: 0 25px 50px rgba(16, 124, 16, 0.4);
+}
+
+.marca-card.nintendo {
+  border-color: rgba(230, 0, 18, 0.5);
+}
+
+.marca-card.nintendo:hover {
+  border-color: #e60012;
+  box-shadow: 0 25px 50px rgba(230, 0, 18, 0.4);
+}
+
+/* Icono de marca */
+.marca-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(82, 17, 212, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.marca-card.playstation .marca-icon {
+  background: rgba(0, 112, 209, 0.1);
+  color: #0070d1;
+}
+
+.marca-card.xbox .marca-icon {
+  background: rgba(16, 124, 16, 0.1);
+  color: #107c10;
+}
+
+.marca-card.nintendo .marca-icon {
+  background: rgba(230, 0, 18, 0.1);
+  color: #e60012;
+}
+
+.marca-card:hover .marca-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.marca-card h3 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.marca-card p {
+  color: #9ca3af;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Features de marca */
+.marca-features {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.marca-features li {
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.marca-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #5211d4;
+  font-weight: 700;
+}
+
+.marca-card.playstation .marca-features li::before {
+  color: #0070d1;
+}
+
+.marca-card.xbox .marca-features li::before {
+  color: #107c10;
+}
+
+.marca-card.nintendo .marca-features li::before {
+  color: #e60012;
+}
+
+/* Botón de marca */
+.marca-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #5211d4, #7c3aed);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.marca-card.playstation .marca-btn {
+  background: linear-gradient(135deg, #0070d1, #0090ff);
+}
+
+.marca-card.xbox .marca-btn {
+  background: linear-gradient(135deg, #107c10, #13a313);
+}
+
+.marca-card.nintendo .marca-btn {
+  background: linear-gradient(135deg, #e60012, #ff1a2b);
+}
+
+.marca-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  gap: 0.75rem;
+}
+
+/* ===============================================
+   CONSOLAS DESTACADAS
+   =============================================== */
+.destacadas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+}
+
+.consola-destacada {
+  background: linear-gradient(135deg, rgba(26, 15, 46, 0.8), rgba(22, 16, 33, 0.9));
+  border: 1px solid rgba(82, 17, 212, 0.3);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  position: relative;
+  backdrop-filter: blur(20px);
+}
+
+.consola-destacada:hover {
+  transform: translateY(-10px);
+  border-color: #5211d4;
+  box-shadow: 0 20px 50px rgba(82, 17, 212, 0.4);
+}
+
+/* Badges */
+.destacada-badges {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 2;
+}
+
+.badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-hot {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: #fff;
+}
+
+.badge-power {
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  color: #fff;
+}
+
+.badge-versatile {
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: #fff;
+}
+
+/* Imagen destacada */
+.destacada-image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background: rgba(82, 17, 212, 0.05);
+}
+
+.destacada-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.consola-destacada:hover .destacada-image img {
+  transform: scale(1.1);
+}
+
+/* Contenido destacada */
+.destacada-content {
+  padding: 2rem;
+}
+
+.destacada-content h3 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.destacada-content p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Specs */
+.destacada-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.spec {
+  padding: 0.5rem 1rem;
+  background: rgba(82, 17, 212, 0.1);
+  border: 1px solid rgba(82, 17, 212, 0.3);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #e5e7eb;
+}
+
+/* Precio */
+.destacada-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.price-label {
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Botón destacada */
+.btn-destacada {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #5211d4, #7c3aed);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-destacada:hover {
+  background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(82, 17, 212, 0.5);
+  gap: 1rem;
+}
+
+/* ===============================================
+   CTA FINAL
+   =============================================== */
+.consolas-cta {
+  max-width: 1000px;
+  margin: 6rem auto;
+  padding: 5rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(82, 17, 212, 0.2), rgba(124, 58, 237, 0.2));
+  border: 1px solid rgba(82, 17, 212, 0.4);
+  border-radius: 32px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+}
+
+.consolas-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #5211d4, transparent);
+  animation: shimmer 3s infinite;
+}
+
+.cta-content h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #fff, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta-content p {
+  color: #9ca3af;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 3rem;
+  background: linear-gradient(135deg, #5211d4, #7c3aed);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+  background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(82, 17, 212, 0.5);
+  gap: 1rem;
+}
+
+/* ===============================================
+   RESPONSIVE
+   =============================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .consolas-hero {
+    min-height: 70vh;
+    padding: 3rem 1.5rem;
+  }
+
+  .hero-stats {
+    gap: 2rem;
+  }
+
+  .marcas-grid,
+  .destacadas-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .consolas-marcas,
+  .consolas-destacadas {
+    margin: 4rem auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .consolas-hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-stats {
+    gap: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .consolas-marcas,
+  .consolas-destacadas {
+    padding: 0 1rem;
+    margin: 3rem auto;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+  }
+
+  .marca-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .destacadas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .destacada-image {
+    height: 250px;
+  }
+
+  .destacada-content {
+    padding: 1.5rem;
+  }
+
+  .consolas-cta {
+    padding: 3rem 1.5rem;
+    margin: 4rem auto;
+  }
+
+  .cta-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .cta-content p {
+    font-size: 0.95rem;
+  }
+
+  .btn-cta {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .hero-shape {
+    filter: blur(80px);
+  }
+
+  .shape-1 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .shape-2 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .shape-3 {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .marca-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .marca-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .destacada-specs {
+    flex-direction: column;
+  }
+
+  .spec {
+    width: 100%;
+    text-align: center;
+  }
+
+  .price {
+    font-size: 1.75rem;
+  }
+}
