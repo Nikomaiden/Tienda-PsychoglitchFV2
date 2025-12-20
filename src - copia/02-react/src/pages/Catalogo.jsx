@@ -137,6 +137,7 @@ export default function Catalogo() {
 
   // Filtrar y ordenar productos
   useEffect(() => {
+    document.title = 'PSYCHOGLITCH - Catálogo de Productos';
     let productosFiltrados = [...productosData];
 
     // Filtrar por categoría
