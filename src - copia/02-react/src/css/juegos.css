@@ -1,0 +1,981 @@
+/* ===============================================
+   JUEGOS PAGE - PSYCHOGLITCH
+   =============================================== */
+
+.juegos-page {
+  background: #0a0612;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* ===============================================
+   HERO SECTION
+   =============================================== */
+.juegos-hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 4rem 2rem;
+}
+
+/* Fondo del hero */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(135deg, #1a0f2e 0%, #0f0819 50%, #1a0f2e 100%);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(82, 17, 212, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(139, 92, 246, 0.2) 0%, transparent 50%);
+}
+
+/* Contenido del hero */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: rgba(82, 17, 212, 0.2);
+  border: 1px solid #5211d4;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(82, 17, 212, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(82, 17, 212, 0);
+  }
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #fff, #8b5cf6, #5211d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: #9ca3af;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Features del hero */
+.hero-features {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(82, 17, 212, 0.1);
+  border: 1px solid rgba(82, 17, 212, 0.3);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  background: rgba(82, 17, 212, 0.2);
+  border-color: #5211d4;
+  transform: translateY(-2px);
+}
+
+.feature-item svg {
+  color: #fbbf24;
+  width: 20px;
+  height: 20px;
+}
+
+.feature-item span {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+}
+
+/* Botones del hero */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-hero-primary,
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 2.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.btn-hero-primary {
+  background: linear-gradient(135deg, #5211d4, #7c3aed);
+  color: #fff;
+  border: none;
+}
+
+.btn-hero-primary:hover {
+  background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(82, 17, 212, 0.5);
+}
+
+.btn-hero-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.btn-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #5211d4;
+  transform: translateY(-3px);
+}
+
+/* ===============================================
+   SECCIONES GENERALES
+   =============================================== */
+.juegos-generos,
+.juegos-destacados,
+.juegos-plataformas {
+  max-width: 1400px;
+  margin: 5rem auto;
+  padding: 0 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  color: #9ca3af;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===============================================
+   GÉNEROS
+   =============================================== */
+.generos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.genero-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(26, 15, 46, 0.6), rgba(22, 16, 33, 0.8));
+  border: 2px solid rgba(82, 17, 212, 0.2);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  font-family: inherit;
+  color: #e5e7eb;
+}
+
+.genero-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(82, 17, 212, 0.5);
+  box-shadow: 0 10px 30px rgba(82, 17, 212, 0.3);
+}
+
+.genero-card.active {
+  background: linear-gradient(135deg, rgba(82, 17, 212, 0.3), rgba(124, 58, 237, 0.3));
+  border-color: #5211d4;
+  transform: scale(1.05);
+}
+
+.genero-icon {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 0 10px rgba(82, 17, 212, 0.5));
+  transition: transform 0.3s ease;
+}
+
+.genero-card:hover .genero-icon,
+.genero-card.active .genero-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.genero-nombre {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ===============================================
+   GRID DE JUEGOS
+   =============================================== */
+.juegos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* Card de juego */
+.juego-card {
+  background: linear-gradient(135deg, rgba(26, 15, 46, 0.8), rgba(22, 16, 33, 0.9));
+  border: 1px solid rgba(82, 17, 212, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  position: relative;
+  backdrop-filter: blur(20px);
+}
+
+.juego-card:hover {
+  transform: translateY(-10px);
+  border-color: #5211d4;
+  box-shadow: 0 20px 50px rgba(82, 17, 212, 0.4);
+}
+
+/* Badges */
+.juego-badges {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-new {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+}
+
+.badge-discount {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: #fff;
+}
+
+/* Imagen del juego */
+.juego-image-link {
+  display: block;
+  text-decoration: none;
+}
+
+.juego-image {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: rgba(82, 17, 212, 0.05);
+}
+
+.juego-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.juego-card:hover .juego-image img {
+  transform: scale(1.15);
+}
+
+/* Overlay con botón play */
+.juego-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 6, 18, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.juego-card:hover .juego-overlay {
+  opacity: 1;
+}
+
+.play-btn {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #5211d4, #7c3aed);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 30px rgba(82, 17, 212, 0.5);
+}
+
+.play-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px rgba(82, 17, 212, 0.7);
+}
+
+.play-btn svg {
+  width: 40px;
+  height: 40px;
+  margin-left: 4px;
+}
+
+/* Contenido del juego */
+.juego-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.juego-info {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.juego-categoria,
+.juego-plataforma {
+  font-size: 0.8rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 15px;
+  font-weight: 600;
+}
+
+.juego-categoria {
+  background: rgba(139, 92, 246, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.juego-plataforma {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.juego-nombre {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  line-height: 1.3;
+}
+
+.juego-nombre:hover {
+  color: #8b5cf6;
+}
+
+.juego-descripcion {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Rating */
+.juego-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0.5rem 0;
+}
+
+.juego-rating svg {
+  color: #fbbf24;
+}
+
+.rating-count {
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+}
+
+/* Precios */
+.juego-pricing {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+}
+
+.precio-original {
+  color: #6b7280;
+  text-decoration: line-through;
+  font-size: 0.95rem;
+}
+
+.precio-actual {
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Acciones */
+.juego-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.btn-add-cart {
+  flex: 1;
+  padding: 0.875rem 1rem;
+  background: linear-gradient(135deg, #5211d4, #7c3aed);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.btn-add-cart:hover {
+  background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(82, 17, 212, 0.4);
+}
+
+.btn-wishlist {
+  padding: 0.875rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #e5e7eb;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-wishlist:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+  color: #ef4444;
+  transform: scale(1.05);
+}
+
+/* Ver más */
+.ver-mas {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.btn-ver-mas {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 2.5rem;
+  background: rgba(82, 17, 212, 0.2);
+  border: 2px solid #5211d4;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+}
+
+.btn-ver-mas:hover {
+  background: linear-gradient(135deg, #5211d4, #7c3aed);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(82, 17, 212, 0.5);
+  gap: 1rem;
+}
+
+/* ===============================================
+   PLATAFORMAS
+   =============================================== */
+.plataformas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.plataforma-card {
+  background: linear-gradient(135deg, rgba(26, 15, 46, 0.8), rgba(22, 16, 33, 0.9));
+  border: 2px solid rgba(82, 17, 212, 0.3);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+}
+
+.plataforma-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent, rgba(82, 17, 212, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.plataforma-card:hover::before {
+  opacity: 1;
+}
+
+.plataforma-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(82, 17, 212, 0.4);
+}
+
+/* Colores por plataforma */
+.plataforma-card.playstation {
+  border-color: rgba(0, 112, 209, 0.5);
+}
+
+.plataforma-card.playstation:hover {
+  border-color: #0070d1;
+  box-shadow: 0 20px 50px rgba(0, 112, 209, 0.4);
+}
+
+.plataforma-card.xbox {
+  border-color: rgba(16, 124, 16, 0.5);
+}
+
+.plataforma-card.xbox:hover {
+  border-color: #107c10;
+  box-shadow: 0 20px 50px rgba(16, 124, 16, 0.4);
+}
+
+.plataforma-card.nintendo {
+  border-color: rgba(230, 0, 18, 0.5);
+}
+
+.plataforma-card.nintendo:hover {
+  border-color: #e60012;
+  box-shadow: 0 20px 50px rgba(230, 0, 18, 0.4);
+}
+
+.plataforma-card.pc {
+  border-color: rgba(139, 92, 246, 0.5);
+}
+
+.plataforma-card.pc:hover {
+  border-color: #8b5cf6;
+  box-shadow: 0 20px 50px rgba(139, 92, 246, 0.4);
+}
+
+.plataforma-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(82, 17, 212, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.plataforma-card.playstation .plataforma-icon {
+  background: rgba(0, 112, 209, 0.1);
+  color: #0070d1;
+}
+
+.plataforma-card.xbox .plataforma-icon {
+  background: rgba(16, 124, 16, 0.1);
+  color: #107c10;
+}
+
+.plataforma-card.nintendo .plataforma-icon {
+  background: rgba(230, 0, 18, 0.1);
+  color: #e60012;
+}
+
+.plataforma-card.pc .plataforma-icon {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.plataforma-card:hover .plataforma-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.plataforma-card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.plataforma-card p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.plataforma-arrow {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #5211d4;
+  transition: transform 0.3s ease;
+}
+
+.plataforma-card:hover .plataforma-arrow {
+  transform: translateX(10px);
+}
+
+/* ===============================================
+   CTA FINAL
+   =============================================== */
+.juegos-cta {
+  max-width: 1000px;
+  margin: 6rem auto;
+  padding: 5rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(82, 17, 212, 0.2), rgba(124, 58, 237, 0.2));
+  border: 1px solid rgba(82, 17, 212, 0.4);
+  border-radius: 32px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+}
+
+.juegos-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #5211d4, transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.cta-content h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #fff, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta-content p {
+  color: #9ca3af;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 3rem;
+  background: linear-gradient(135deg, #5211d4, #7c3aed);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+  background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(82, 17, 212, 0.5);
+  gap: 1rem;
+}
+
+/* ===============================================
+   RESPONSIVE
+   =============================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .juegos-hero {
+    min-height: 70vh;
+    padding: 3rem 1.5rem;
+  }
+
+  .hero-features {
+    gap: 1.5rem;
+  }
+
+  .juegos-generos,
+  .juegos-destacados,
+  .juegos-plataformas {
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+  }
+
+  .generos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .juegos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .plataformas-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .juegos-hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-features {
+    gap: 1rem;
+  }
+
+  .feature-item {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .juegos-generos,
+  .juegos-destacados,
+  .juegos-plataformas {
+    padding: 0 1rem;
+    margin: 3rem auto;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+  }
+
+  .generos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .genero-card {
+    padding: 1rem;
+  }
+
+  .genero-icon {
+    font-size: 2rem;
+  }
+
+  .genero-nombre {
+    font-size: 0.85rem;
+  }
+
+  .juegos-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .juego-image {
+    height: 240px;
+  }
+
+  .plataformas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .juegos-cta {
+    padding: 3rem 1.5rem;
+    margin: 4rem auto;
+  }
+
+  .cta-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .cta-content p {
+    font-size: 0.95rem;
+  }
+
+  .btn-cta {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .juego-content {
+    padding: 1.25rem;
+  }
+
+  .juego-actions {
+    flex-direction: column;
+  }
+
+  .btn-add-cart,
+  .btn-wishlist {
+    width: 100%;
+  }
+
+  .precio-actual {
+    font-size: 1.5rem;
+  }
+
+  .play-btn {
+    width: 60px;
+    height: 60px;
+  }
+
+  .play-btn svg {
+    width: 30px;
+    height: 30px;
+  }
+}
