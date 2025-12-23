@@ -8,6 +8,7 @@ import Catalogo from './pages/Catalogo.jsx'
 import Consolas from './pages/Consolas.jsx'
 import Whatsapp from './components/Whatsapp.jsx'
 import Juegos from './pages/juegos.jsx'
+import Tecnologia from './pages/Tecnologia.jsx'
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
         
         <Route path="/juegos" element={<Juegos />} />
         <Route path="/consolas" element={<Consolas />} />
-        <Route path="/tecnologia" element={<div>Página de Tecnología</div>} />
+        <Route path="/tecnologia" element={<Tecnologia />} />
         <Route path="/ofertas" element={<div>Página de Ofertas</div>} />
         <Route path="/carrito" element={<div>Carrito</div>} />
         <Route path="/favoritos" element={<div>Favoritos</div>} />

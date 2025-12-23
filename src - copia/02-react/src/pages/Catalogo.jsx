@@ -135,6 +135,11 @@ export default function Catalogo() {
   const [busqueda, setBusqueda] = useState('');
   const [vistaGrid, setVistaGrid] = useState(true);
 
+  
+  // Cambiar título de la página
+  useEffect(() => {
+    document.title = 'Catálogo - Tienda Virtual Games';
+  }, []);
   // Filtrar y ordenar productos
   useEffect(() => {
     let productosFiltrados = [...productosData];
