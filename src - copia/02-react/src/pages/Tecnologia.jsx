@@ -4,7 +4,7 @@ import '../css/tecnologia.css';
 
 export default function Tecnologia() {
   useEffect(() => {
-    document.title = "PSYCHOGLITCH - Accesorios Tecnológicos";
+    document.title = "PSYCHOGLITCH - Tecnología";
     window.scrollTo(0, 0);
   }, []);
 
