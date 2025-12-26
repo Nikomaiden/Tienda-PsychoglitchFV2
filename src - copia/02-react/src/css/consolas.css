@@ -619,7 +619,7 @@
    =============================================== */
 .consolas-cta {
   max-width: 1000px;
-  margin: 6rem auto;
+  margin: 6rem auto 0;
   padding: 5rem 2rem;
   text-align: center;
   background: linear-gradient(135deg, rgba(82, 17, 212, 0.2), rgba(124, 58, 237, 0.2));
@@ -639,6 +639,15 @@
   height: 2px;
   background: linear-gradient(90deg, transparent, #5211d4, transparent);
   animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .cta-content h2 {
@@ -680,6 +689,16 @@
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 15px 40px rgba(82, 17, 212, 0.5);
   gap: 1rem;
+}
+
+/* ===============================================
+   ESTILOS PARA FOOTER (AÑADIDO)
+   =============================================== */
+footer {
+  background: #0a0612;
+  color: #fff;
+  margin: 0;
+  padding: 3rem 0 0;
 }
 
 /* ===============================================
@@ -782,7 +801,7 @@
 
   .consolas-cta {
     padding: 3rem 1.5rem;
-    margin: 4rem auto;
+    margin: 4rem auto 0;
   }
 
   .cta-content h2 {
