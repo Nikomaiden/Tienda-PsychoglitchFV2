@@ -1,0 +1,476 @@
+/* =================================================
+   OFERTAS PAGE - PSYCHOGLITCH (SCOPED THEME)
+   ================================================= */
+
+.ofertas-page {
+  /* 🎨 Variables SOLO para ofertas */
+  --primary: #7c3aed;
+  --secondary: #a78bfa;
+  --accent: #c4b5fd;
+
+  --danger: #ef4444;
+  --danger-light: #fca5a5;
+  --success: #22c55e;
+
+  --bg-primary: #0a0612;
+  --bg-secondary: #140c24;
+  --bg-card: #1a1033;
+
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* =================================================
+   HERO
+   ================================================= */
+
+.ofertas-hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.18;
+  animation: float 16s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 500px;
+  height: 500px;
+  background: var(--primary);
+  top: -150px;
+  left: -150px;
+}
+
+.shape-2 {
+  width: 400px;
+  height: 400px;
+  background: var(--secondary);
+  bottom: -120px;
+  right: -120px;
+}
+
+.shape-3 {
+  width: 450px;
+  height: 450px;
+  background: var(--accent);
+  top: 50%;
+  right: 5%;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(40px); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 0.6rem 1.6rem;
+  border-radius: 999px;
+  background: rgba(124,58,237,0.2);
+  border: 1px solid var(--primary);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #fff, var(--secondary), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  color: var(--text-secondary);
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.hero-subtitle.secondary {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* =================================================
+   COUNTDOWN
+   ================================================= */
+
+.countdown-banner {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  background: rgba(124,58,237,0.15);
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(124,58,237,0.3);
+}
+
+.countdown-item {
+  text-align: center;
+}
+
+.countdown-number {
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.countdown-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.countdown-separator {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+/* =================================================
+   HERO ACTIONS
+   ================================================= */
+
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-hero-primary,
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1rem 2.4rem;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-hero-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+}
+
+.btn-hero-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(124,58,237,0.5);
+}
+
+.btn-hero-secondary {
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+}
+
+.btn-hero-secondary:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* =================================================
+   SECTIONS
+   ================================================= */
+
+.categorias-ofertas,
+.ofertas-destacadas,
+.ofertas-ventajas,
+.ofertas-newsletter,
+.ofertas-cta {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+}
+
+.section-description {
+  color: var(--text-secondary);
+  margin-top: 1rem;
+}
+
+/* =================================================
+   CATEGORÍAS
+   ================================================= */
+
+.categorias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 2rem;
+}
+
+.categoria-oferta-card {
+  background: var(--bg-card);
+  border-radius: 18px;
+  padding: 2.5rem;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  border: 1px solid rgba(124,58,237,0.3);
+  transition: all 0.3s ease;
+}
+
+.categoria-oferta-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+}
+
+.categoria-oferta-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.categoria-oferta-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.categoria-oferta-arrow {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  font-size: 1.5rem;
+  opacity: 0.4;
+}
+
+/* =================================================
+   OFERTAS DESTACADAS
+   ================================================= */
+
+.ofertas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+  gap: 2.5rem;
+}
+
+.oferta-card {
+  background: var(--bg-card);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(124,58,237,0.3);
+  transition: all 0.4s ease;
+}
+
+.oferta-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(124,58,237,0.4);
+}
+
+.oferta-badges {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.badge {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.badge-oferta {
+  background: rgba(124,58,237,0.3);
+}
+
+.badge-descuento {
+  background: rgba(239,68,68,0.3);
+  color: var(--danger-light);
+}
+
+.stock-warning {
+  background: rgba(239,68,68,0.2);
+  color: var(--danger-light);
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.oferta-image {
+  position: relative;
+  height: 240px;
+}
+
+.oferta-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.oferta-timer {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.6);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+}
+
+.oferta-content {
+  padding: 2rem;
+}
+
+.oferta-tags {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.tag {
+  background: rgba(124,58,237,0.25);
+  border: 1px solid rgba(124,58,237,0.4);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+}
+
+.oferta-precios {
+  margin-top: 1.5rem;
+}
+
+.precio-original {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.precio-oferta {
+  font-size: 1.8rem;
+  font-weight: 900;
+  display: block;
+}
+
+.ahorro-label {
+  font-size: 0.75rem;
+  color: var(--success);
+}
+
+.oferta-barra {
+  background: rgba(255,255,255,0.1);
+  height: 6px;
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+
+.barra-progreso {
+  height: 100%;
+  background: linear-gradient(90deg,var(--primary),var(--secondary));
+  border-radius: 10px;
+}
+
+.btn-oferta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg,var(--primary),var(--secondary));
+  padding: 0.8rem 1.8rem;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* =================================================
+   VENTAJAS
+   ================================================= */
+
+.ventajas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 2rem;
+}
+
+.ventaja-card {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.ventaja-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+
+/* =================================================
+   CTA FINAL
+   ================================================= */
+
+.ofertas-cta {
+  text-align: center;
+}
+
+.btn-cta {
+  display: inline-flex;
+  gap: 10px;
+  padding: 1.2rem 3rem;
+  background: linear-gradient(135deg,var(--primary),var(--secondary));
+  color: white;
+  border-radius: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* =================================================
+   RESPONSIVE
+   ================================================= */
+
+@media (max-width: 768px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .countdown-banner {
+    flex-direction: column;
+  }
+}
