@@ -10,12 +10,16 @@ import Whatsapp from './components/Whatsapp.jsx'
 import Juegos from './pages/juegos.jsx'
 import Tecnologia from './pages/Tecnologia.jsx'
 import Ofertas from './pages/Ofertas.jsx'
+import Carrito from './components/Carrito.jsx'
+
 
 function App() {
   return (
     <>
       <Header />
+
       
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
@@ -25,13 +29,14 @@ function App() {
         <Route path="/consolas" element={<Consolas />} />
         <Route path="/tecnologia" element={<Tecnologia />} />
         <Route path="/ofertas" element={<Ofertas/>} />
-        <Route path="/carrito" element={<div>Carrito</div>} />
         <Route path="/favoritos" element={<div>Favoritos</div>} />
         
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
 
       <Whatsapp />
+      
+      <Carrito/>
       
       <Footer />
     </>
