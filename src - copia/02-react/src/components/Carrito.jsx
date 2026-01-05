@@ -23,10 +23,9 @@ function Carrito() {
   ]);
 
   useEffect(() => {
-    // No bloqueamos el scroll, la página se puede mover siempre
   }, [abierto]);
 
-  // Cerrar carrito con tecla Escape
+
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape' && abierto) {
@@ -73,7 +72,6 @@ function Carrito() {
 
   return (
     <>
-      {/* BOTÓN FLOTANTE */}
       <button 
         className="carrito-flotante" 
         onClick={() => setAbierto(true)} 
