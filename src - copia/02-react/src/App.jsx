@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import {Lazy, Suspense} from 'react'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import { HomePage } from './pages/Home.jsx'
@@ -12,13 +13,19 @@ import Tecnologia from './pages/Tecnologia.jsx'
 import Ofertas from './pages/Ofertas.jsx'
 import Carrito from './components/Carrito.jsx'
 
+const Homepage = Lazy(() => import ('./pages/Home.jsx'))
+const LoginPage = Lazy(() => import ('./components/Login.jsx'))
+const CatalogoPage = Lazy(() => import ('./pages/Catalogo.jsx'))
+const NotFound = Lazy(() => import ('./pages/404.jsx'))
+const ConsolasPage = Lazy(() => import ('./pages/Consolas.jsx'))
+const JuegosPage = Lazy(() => import ('./pages/juegos.jsx'))
+const TecnologiaPage = Lazy(() => import ('./pages/Tecnologia.jsx'))
+const OfertasPage = Lazy(() => import ('./pages/Ofertas.jsx'))
 
 function App() {
   return (
     <>
       <Header />
-
-      
 
       <Routes>
         <Route path="/" element={<HomePage />} />
