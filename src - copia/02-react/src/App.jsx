@@ -1,52 +1,43 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import {Lazy, Suspense} from 'react'
+import {lazy, Suspense} from 'react'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
-import { HomePage } from './pages/Home.jsx'
-import Login from './components/Login.jsx'
-import { NotFoundPage } from './pages/404.jsx'
-import Catalogo from './pages/Catalogo.jsx'
-import Consolas from './pages/Consolas.jsx'
 import Whatsapp from './components/Whatsapp.jsx'
-import Juegos from './pages/juegos.jsx'
-import Tecnologia from './pages/Tecnologia.jsx'
-import Ofertas from './pages/Ofertas.jsx'
 import Carrito from './components/Carrito.jsx'
 
-const Homepage = Lazy(() => import ('./pages/Home.jsx'))
-const LoginPage = Lazy(() => import ('./components/Login.jsx'))
-const CatalogoPage = Lazy(() => import ('./pages/Catalogo.jsx'))
-const NotFound = Lazy(() => import ('./pages/404.jsx'))
-const ConsolasPage = Lazy(() => import ('./pages/Consolas.jsx'))
-const JuegosPage = Lazy(() => import ('./pages/juegos.jsx'))
-const TecnologiaPage = Lazy(() => import ('./pages/Tecnologia.jsx'))
-const OfertasPage = Lazy(() => import ('./pages/Ofertas.jsx'))
+const HomePage = lazy(() => import ('./pages/Home.jsx'))
+const Login = lazy(() => import ('./components/Login.jsx'))
+const Catalogo = lazy(() => import ('./pages/Catalogo.jsx'))
+const NotFoundPage = lazy(() => import ('./pages/404.jsx'))
+const Consolas = lazy(() => import ('./pages/Consolas.jsx'))
+const Juegos = lazy(() => import ('./pages/juegos.jsx'))
+const Tecnologia = lazy(() => import ('./pages/Tecnologia.jsx'))
+const Ofertas = lazy(() => import ('./pages/Ofertas.jsx'))
+
 
 function App() {
   return (
     <>
       <Header />
+        <Suspense fallback={<div>Cargando...</div>}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/catalogo" element={<Catalogo />} />
+            <Route path="/juegos" element={<Juegos />} />
+            <Route path="/consolas" element={<Consolas />} />
+            <Route path="/tecnologia" element={<Tecnologia />} />
+            <Route path="/ofertas" element={<Ofertas/>} />
+            <Route path="/favoritos" element={<div>Favoritos</div>} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+          
+      </Suspense>
 
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/catalogo" element={<Catalogo />} />
-        
-        <Route path="/juegos" element={<Juegos />} />
-        <Route path="/consolas" element={<Consolas />} />
-        <Route path="/tecnologia" element={<Tecnologia />} />
-        <Route path="/ofertas" element={<Ofertas/>} />
-        <Route path="/favoritos" element={<div>Favoritos</div>} />
-        
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-
-      <Whatsapp />
-      
+      <Whatsapp /> 
       <Carrito/>
-      
       <Footer />
-    </>
+  </>
   )
 }
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../css/index.css';
+
 
 // Componente de Card de Producto
 function ProductCard({ image, title, description, badge, link }) {
@@ -44,7 +44,7 @@ function Section({ title, subtitle, children, className, showButton, buttonText,
   );
 }
 
-export function HomePage() {
+export default function HomePage() {
   const proximosLanzamientos = [
     {
       image: '/switch.webp',

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../css/404.css';
 
-export function NotFoundPage() {
+export default function NotFoundPage() {
   return (
     <div className="not-found-page">
       {/* Fondo animado */}
