@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import {lazy, Suspense} from 'react'
+import {lazy, Suspense, useState} from 'react'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import Whatsapp from './components/Whatsapp.jsx'
@@ -16,6 +16,17 @@ const Ofertas = lazy(() => import ('./pages/Ofertas.jsx'))
 
 
 function App() {
+  const {isLoggedIn, setIsLoggedIn} = useState(false);
+  
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  }
+  
+
   return (
     <>
       <Header />
