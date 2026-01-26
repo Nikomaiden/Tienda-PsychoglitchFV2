@@ -16,16 +16,6 @@ const Ofertas = lazy(() => import ('./pages/Ofertas.jsx'))
 
 
 function App() {
-  const {isLoggedIn, setIsLoggedIn} = useState(false);
-  
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-  }
-  
 
   return (
     <>
@@ -42,9 +32,7 @@ function App() {
             <Route path="/favoritos" element={<div>Favoritos</div>} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
-          
-      </Suspense>
-
+        </Suspense>
       <Whatsapp /> 
       <Carrito/>
       <Footer />

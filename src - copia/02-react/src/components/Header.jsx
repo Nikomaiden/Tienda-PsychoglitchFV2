@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; 
+import { Link, NavLink } from "react-router-dom"; 
+import { useFavoritesStore } from "../store/authStore.js";
 import "../css/header.css";
 
 function Header() {
+    const {countFavorites} = useFavoritesStore();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -161,12 +163,12 @@ function Header() {
             </div>
           </nav>
 
+        <nav>
           {/* Búsqueda y Login */}
           <div className="header-actions">
             <Link to="/login" className="login-btn">
               Iniciar sesión
             </Link>
-            
             <div className="search-form">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -192,6 +194,7 @@ function Header() {
               />
             </div>
           </div>
+        </nav>
 
           {/* Carrito y Favoritos */}
           <div className="header-icons">
