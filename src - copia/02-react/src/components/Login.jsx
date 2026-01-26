@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../css/login.css';
+import { useAuthStore } from '../store/authStore';
 
 export function Login() {
+  //Zustand auth store
+  const login = useAuthStore((state) => state.login);
+
   // Estados para manejar el formulario
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -40,6 +44,9 @@ export function Login() {
     setTimeout(() => {
       // Simulación de login exitoso
       console.log('Login exitoso:', { email, password });
+
+      // Actualizar estado global de autenticación
+      login();
       
       // Guardar usuario en localStorage (opcional)
       localStorage.setItem('user', JSON.stringify({ email }));
